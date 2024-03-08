@@ -878,10 +878,22 @@ data_files=[
     ],
 ```
 
+## 12 TF：坐标系管理工具
+
+`ros2 run tf2_tools view_frames `：查看 TF 树。这个命令会在当前路径下生成一个 pdf 文件。
+
+`ros2 run tf2_ros tf2_echo turtle2 turtle1`：查询两个坐标系之间的具体变换。
+
+---
+
+静态 TF 广播。二者的相对位置不发生变化的情况，比如雷达和机器人底盘之间。
+
 
 
 ## 工具
 
-`colcon build`：编译。在工作空间执行命令
++ `colcon build`：编译。在工作空间执行命令
 
-`sudo apt install ros-humble-usb-cam`：标准相机驱动。通过 `ros2 run usb_cam usb_cam_node_exe ` 创建一个相机 node，名为 `usb_cam`，这个 `node` 通过 `image_raw` 话题发布图像
++ `sudo apt install ros-humble-usb-cam`：标准相机驱动。通过 `ros2 run usb_cam usb_cam_node_exe ` 创建一个相机 node，名为 `usb_cam`，这个 `node` 通过 `image_raw` 话题发布图像
+
++ `transforms3d`：3D 坐标变换的工具。安装命令：`sudo pip3 install transforms3d`。
